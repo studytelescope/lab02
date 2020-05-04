@@ -6,6 +6,8 @@
 $ open https://git-scm.com
 ```
 
+Set up environment variables
+
 ## Tasks
 
 - [x] 1. Создать публичный репозиторий с названием **lab02** и с лиценцией **MIT**
@@ -17,7 +19,7 @@ $ open https://git-scm.com
 ## Tutorial
 
 ```ShellSession
-# Setting global variables GITHUB_USERNAME, GITHUB_EMAIL, GITHUB_TOKEN
+# Set up global variables GITHUB_USERNAME, GITHUB_EMAIL, GITHUB_TOKEN
 $ export GITHUB_USERNAME=thedraftaccount
 $ export GITHUB_EMAIL=jonnyuz99@gmail.com
 $ export GITHUB_TOKEN=8e3dc38d17f2e0cfdde2016a74e5555a1c610592
@@ -26,6 +28,8 @@ $ export GITHUB_TOKEN=8e3dc38d17f2e0cfdde2016a74e5555a1c610592
 $ alias edit=subl
 ```
 
+Set up workspace environment
+
 ```ShellSession
 # Getting into workspace directory
 $ cd ${GITHUB_USERNAME}/workspace
@@ -33,6 +37,8 @@ $ cd ${GITHUB_USERNAME}/workspace
 # Launching scripts/activate
 $ source scripts/activate
 ```
+
+Update .config file
 
 ```ShellSession
 # Creating .config file
@@ -49,6 +55,8 @@ EOF
 # Configuration of transmittion protocol
 $ git config --global hub.protocol https
 ```
+
+Init project directory and push README.md
 
 ```ShellSession
 # Creating and getting into task folders
@@ -92,6 +100,7 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 
+# Add changes of README.md and push commit to origin
 $ git add README.md
 $ git commit -m"added README.md"
 $ git push origin master
@@ -106,6 +115,8 @@ $ git push origin master
 *.swp
 .idea/
 ```
+
+Pull remote changes
 
 ```ShellSession
 # Getting files from the master branch
@@ -125,7 +136,7 @@ Fast-forward
  create mode 100644 .gitignore
 
 
-# Showing commits
+# Show commits
 $ git log
 Author: thedraftaccount <63643996+thedraftaccount@users.noreply.github.com>
 Date:   Sun Apr 19 13:57:52 2020 +0300
@@ -139,6 +150,8 @@ Date:   Sun Apr 19 13:56:22 2020 +0300
     Initial commit
 
 ```
+
+Set up project tree environment
 
 ```ShellSession
 # Creating directories
@@ -162,6 +175,8 @@ void print(const std::string& text, std::ofstream& out)
 EOF
 ```
 
+Update include/print.hpp
+
 ```ShellSession
 # Writing some useless code
 $ cat > include/print.hpp <<EOF
@@ -174,6 +189,8 @@ void print(const std::string& text, std::ostream& out = std::cout);
 EOF
 ```
 
+Update include/example1.cpp
+
 ```ShellSession
 # Writing some useless code
 $ cat > examples/example1.cpp <<EOF
@@ -185,6 +202,8 @@ int main(int argc, char** argv)
 }
 EOF
 ```
+
+Update include/example2.cpp
 
 ```ShellSession
 # Writing some useless code
@@ -206,14 +225,44 @@ EOF
 $ edit README.md
 ```
 
+Commit and push local changes
+
 ```ShellSession
 # Looking for untracked files
 $ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+  README.md
+  examples/
+  include/
+  sources/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
 
 # Adding of all files, commiting and pushing into master branch
 $ git add .
 $ git commit -m "added sources"
-$ git push origin master
+[master b50a223] added sources
+ 5 files changed, 275 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 examples/example1.cpp
+ create mode 100644 examples/example2.cpp
+ create mode 100644 include/print.hpp
+ create mode 100644 sources/print.cpp
+
+$ git push origin master // push into master
+Username for 'https://github.com': thedraftaccount  
+Password for 'https://thedraftaccount@github.com': 
+Counting objects: 10, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (10/10), 3.11 KiB | 1.04 MiB/s, done.
+Total 10 (delta 0), reused 0 (delta 0)
+To https://github.com/thedraftaccount/lab02.git
+   00f30cb..b50a223  master -> master
 ```
 
 ## Report
